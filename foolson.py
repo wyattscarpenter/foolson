@@ -93,13 +93,13 @@ def foolson_to_values(foolson: str):
 
 
 def test():
-    print(foolson_to_json('foolson\n  "blah":\n    "blah": "blah"\nnosloof'))
-    print(foolson_to_values('foolson\n{"blah":\n  "blah": "blah"}\nnosloof'))
+    print(foolson_to_json('foolson\n  "blah":\n    "blah": "blah"\nnosloof\n'))
+    print(foolson_to_values('foolson\n{"blah":\n  "blah": "blah"}\nnosloof\n'))
     # Example from https://docs.python.org/3/library/json.html
     print(
         json.loads("""["foo", {"bar":["baz", null, 1.0, 2]}]""")
         == foolson_to_values(  # print(
-            """foolson\n["foo",\n  "bar":  ["baz", null, 1.0, 2]\n]\nnosloof"""
+            """foolson\n["foo",\n  "bar":  ["baz", null, 1.0, 2]\n]\nnosloof\n"""
         )
         # )
     )
